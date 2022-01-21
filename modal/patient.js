@@ -7,12 +7,15 @@ const patientSchama = mongoose.Schema({
     },
     phoneNumber:{
         type:Number,
-        required: true
+        required: true,
+        unique: true
     },
     reports:[{
         type: mongoose.Schema.Types.ObjectId,
-        ref:'Report'
+        ref:'PatientReport'
     }]
+},{
+    timestamps:true
 })
 
 const Patient = mongoose.model('Patient',patientSchama);

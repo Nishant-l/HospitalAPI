@@ -3,7 +3,7 @@ const doctorsController = require('../../../../controller/API/V1/doctors_control
 
 const router = express.Router();
 
-router.get('/register',doctorsController.register);
+router.post('/register',doctorsController.register);
 router.get('/login',doctorsController.login);
 
 module.exports = router;
