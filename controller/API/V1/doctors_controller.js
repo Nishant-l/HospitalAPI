@@ -29,7 +29,7 @@ module.exports.login = async (req,res)=>{
         return res.status(200).json({
             message:"sign in successfull",
             data:{
-                token: jwt.sign(doctor.toJSON(),'Secret',{expiresIn:'10000'})
+                token: jwt.sign(doctor.toJSON(),'Secret',{expiresIn:'100000'})
             }
         })
 

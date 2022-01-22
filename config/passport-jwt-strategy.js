@@ -5,7 +5,7 @@ const extractJWT = require('passport-jwt').ExtractJwt;
 const Doctor = require('../modal/doctor');
 
 let opts = {
-    jwtFromRequest: extractJWT.fromAuthHeaderAsBearerToken,
+    jwtFromRequest: extractJWT.fromAuthHeaderAsBearerToken(),
     secretOrKey:'Secret'
 }
 
