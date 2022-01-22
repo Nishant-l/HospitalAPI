@@ -1,11 +1,11 @@
 const Reports = require('../../../modal/patientReport');
 
-module.exports.allReportStatus = async (req,res)=>{
+module.exports.allReportStatus = async (req,res)=>{ //Get all reports filtered by status of the report
     try{
-        const report = await Reports.find({status:req.params.status}).populate('patientId');
+        const report = await Reports.find({status:req.params.status}).populate('patientId'); //get report by the status and populate the patient info
         return res.status(200).json({
             message:'successfull',
-            data:report.map((r)=>{
+            data:report.map((r)=>{ // make object with relevent info and discard un wanted fields
                     return ({
                         patientName:r.patientId.name,
                         patientNo:r.patientId.phoneNumber,
@@ -15,7 +15,8 @@ module.exports.allReportStatus = async (req,res)=>{
                     })
             })
         })
-    }catch{
+    }catch(err){
+        console.log(err);
         return res.status(500).json({
             message:'internal server error'
         })

@@ -13,7 +13,7 @@ app.use('/',require('./routes'));
 
 
 app.listen(8000,(err)=>{
-    console.log('✅  successfully Running surver');
+    console.log('✅  successfully Running surver on port 8000');
     if(err){
         console.log(err,'❌ error Stsrting server --->');
     }
