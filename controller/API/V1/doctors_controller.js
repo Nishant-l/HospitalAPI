@@ -8,7 +8,7 @@ module.exports.register = async(req,res)=>{ // to createnew account for a doctor
         console.log(newDoctor);
         return res.status(200).json({
             message:'registered successfully',
-            data: newDoctor
+            data: newDoctor.userName + 'created successfully'
         })
     }catch{
         return res.status(500).json({
