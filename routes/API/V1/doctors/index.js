@@ -4,6 +4,6 @@ const doctorsController = require('../../../../controller/API/V1/doctors_control
 const router = express.Router();
 
 router.post('/register',doctorsController.register);
-router.get('/login',doctorsController.login);
+router.post('/login',doctorsController.login);
 
 module.exports = router;
